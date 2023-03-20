@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--<html th:replace="~{layoutFile :: layout/base(~{::body})}" lang="kr">-->
+<html th:fragment="layoutFragment (title, content)" xmlns:th="http://www.thymeleaf.org" lang="kr">
+<head>
+    <title th:replace="${title}">Layout file</title>
+
+    <th:block th:replace="~{common/style :: styleFragment}"></th:block>
+</head>
+<body>
+
+<div th:insert="~{common/menu :: menuFragment}"></div>
+
+<header th:replace="~{common/header :: headerFragment}"></header>
+<section th:replace="${content}">Layout Section</section>
+<footer th:insert="~{common/footer :: footerFragment}"></footer>
+
+<th:block th:insert="~{common/script :: scriptFragment}"></th:block>
+</body>
+</html>
+
